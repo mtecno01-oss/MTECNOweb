@@ -1,0 +1,439 @@
+/* ===== VARIABLES Y BASE ===== */
+
+:root {
+    /* :root es el elemento raíz: acá van las variables reutilizables */
+    --bg: #050B18;
+    /* fondo general (azul casi negro) */
+    --panel: #0C1830;
+    /* fondo de tarjetas y formulario */
+    --line: #1D2E52;
+    /* color de bordes y líneas divisorias */
+    --blue: #2B7BFF;
+    /* azul de marca (botones) */
+    --ice: #9CC4FF;
+    /* azul claro (títulos secundarios) */
+    --silver: #D5DDEB;
+    /* color del texto principal */
+    --mute: #8C9BB8;
+    /* gris azulado para textos secundarios */
+    --wa: #25D366;
+    /* verde de WhatsApp */
+    box-sizing: border-box;
+    /* el padding no agranda las cajas */
+    padding-top: env(safe-area-inset-top, 0px);
+    /* respeta la barra superior del celular (notch) */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    /* respeta la barra inferior del celular */
+    color-scheme: dark;
+    /* avisa al navegador que el diseño es oscuro */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
+
+/* todos los elementos heredan el mismo cálculo de tamaño */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px
+}
+
+
+/* scroll suave; deja espacio para la barra fija al saltar a una sección */
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--silver);
+    font: 400 1rem/1.6 Barlow, system-ui, sans-serif
+}
+
+
+/* sin margen, colores base, tipografía y altura de línea */
+
+h1,
+h2,
+.logo {
+    font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1
+}
+
+
+/* títulos en estilo condensado e itálico, como el logo */
+
+a {
+    color: inherit
+}
+
+
+/* los enlaces toman el color del texto que los rodea */
+
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px
+}
+
+
+/* contenedor: ancho máximo, centrado y con aire a los lados */
+
+
+/* ===== BARRA SUPERIOR ===== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgba(5, 11, 24, .92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line)
+}
+
+
+/* queda fija arriba, semitransparente con desenfoque */
+
+header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px
+}
+
+
+/* logo a la izquierda y menú a la derecha */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.9rem;
+    letter-spacing: .5px;
+    text-decoration: none;
+    background: linear-gradient(180deg, #fff, #9FB0CC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
+
+/* imagen + texto con degradado plateado */
+
+.logo img {
+    border-radius: 50%
+}
+
+
+/* logo circular */
+
+nav a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: var(--mute);
+    font-weight: 500
+}
+
+
+/* enlaces del menú */
+
+nav a:hover,
+nav a:focus-visible {
+    color: #fff
+}
+
+
+/* se iluminan al pasar el mouse o con el teclado */
+
+
+/* ===== PORTADA ===== */
+
+.hero {
+    background: #000;
+    padding-bottom: 48px
+}
+
+
+/* fondo negro, igual al del banner, para que se fusione */
+
+.hero h1 {
+    font-size: 0
+}
+
+
+/* el título es solo la imagen */
+
+.banner {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+    -webkit-mask-image: linear-gradient(#000 82%, transparent);
+    mask-image: linear-gradient(#000 82%, transparent)
+}
+
+
+/* banner centrado y con borde inferior difuminado */
+
+.hero p {
+    max-width: 34rem;
+    font-size: 1.15rem;
+    margin: 18px 0 28px;
+    color: var(--silver)
+}
+
+
+/* frase de presentación */
+
+.btn {
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    font: 600 1.05rem Barlow, sans-serif;
+    padding: 14px 26px;
+    border-radius: 6px;
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none
+}
+
+
+/* botón base */
+
+.btn:hover {
+    background: #4A90FF
+}
+
+
+/* azul más claro al pasar el mouse */
+
+.btn.wa {
+    background: var(--wa);
+    color: #04210f
+}
+
+
+/* variante verde para WhatsApp */
+
+:focus-visible {
+    outline: 3px solid var(--ice);
+    outline-offset: 2px
+}
+
+
+/* contorno visible al navegar con teclado (accesibilidad) */
+
+
+/* ===== SECCIONES ===== */
+
+section {
+    padding: 56px 0;
+    border-top: 1px solid var(--line)
+}
+
+
+/* espacio arriba y abajo y línea divisoria */
+
+h2 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    margin-bottom: 8px;
+    color: #fff
+}
+
+
+/* clamp(mín, ideal, máx): el título se adapta al ancho */
+
+.sub {
+    color: var(--mute);
+    margin: 0 0 28px;
+    max-width: 38rem
+}
+
+
+/* texto de apoyo bajo el título */
+
+
+/* ===== CATÁLOGO ===== */
+
+.cat {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0
+}
+
+
+/* rejilla de 1 columna en celular */
+
+.row {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line)
+}
+
+
+/* cada servicio con línea inferior */
+
+.row h3 {
+    margin: 0 0 4px;
+    font-size: 1.2rem;
+    color: var(--ice)
+}
+
+
+/* nombre del servicio */
+
+.row p {
+    margin: 0;
+    color: var(--mute)
+}
+
+
+/* descripción */
+
+@media(min-width:720px) {
+    .cat {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 48px
+    }
+}
+
+
+/* desde 720px de ancho pasa a 2 columnas (responsive) */
+
+
+/* ===== PRESUPUESTO ===== */
+
+.quote {
+    display: grid;
+    gap: 36px
+}
+
+
+/* apila condiciones y formulario con separación */
+
+@media(min-width:820px) {
+    .quote {
+        grid-template-columns: 5fr 6fr
+    }
+}
+
+
+/* en pantallas grandes: dos columnas */
+
+.terms {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+
+/* lista sin viñetas */
+
+.terms li {
+    padding: 12px 0 12px 18px;
+    border-left: 3px solid var(--blue);
+    margin-bottom: 12px;
+    background: var(--panel)
+}
+
+
+/* cada condición con barra azul a la izquierda */
+
+form {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px;
+    display: grid;
+    gap: 14px
+}
+
+
+/* tarjeta del formulario */
+
+label {
+    display: grid;
+    gap: 6px;
+    font-weight: 500;
+    font-size: .95rem
+}
+
+
+/* etiqueta sobre su campo */
+
+input,
+select,
+textarea {
+    width: 100%;
+    font: 400 1rem Barlow, sans-serif;
+    color: #fff;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px
+}
+
+
+/* estilo común de los campos */
+
+.two {
+    display: grid;
+    gap: 14px
+}
+
+
+/* dos campos: apilados en celular */
+
+@media(min-width:480px) {
+    .two {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+
+/* lado a lado desde 480px */
+
+.hint {
+    font-size: .85rem;
+    color: var(--mute);
+    margin: 0
+}
+
+
+/* aviso pequeño */
+
+
+/* ===== CONTACTO Y PIE ===== */
+
+.contact {
+    display: grid;
+    gap: 12px;
+    font-size: 1.05rem
+}
+
+
+/* datos de contacto en columna */
+
+footer {
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+    color: var(--mute);
+    font-size: .9rem
+}
+
+
+/* pie de página */
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+}
+
+
+/* si el usuario pide menos animación, se desactiva el scroll suave */

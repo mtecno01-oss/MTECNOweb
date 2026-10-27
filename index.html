@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- Avisa al navegador que es un documento HTML5 -->
+<html lang="es">
+<!-- Raíz del documento; lang="es" indica idioma español -->
+
+<head>
+    <!-- Zona de configuración: no se ve en pantalla -->
+    <meta charset="utf-8">
+    <!-- Codificación de texto: permite tildes y ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!-- Clave del responsive: usa el ancho real del celular -->
+    <title>Mtecno | Servicio técnico</title>
+    <!-- Título de la pestaña y de Google -->
+    <link rel="icon" href="img/logo.png">
+    <!-- Ícono de la pestaña del navegador -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Acelera la conexión con Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Carga las tipografías Barlow -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Enlaza el archivo de diseño (capa CSS) -->
+</head>
+<!-- Fin de la configuración -->
+
+<body>
+    <!-- Todo lo que se ve en pantalla -->
+
+    <header>
+        <!-- Barra superior fija -->
+        <div class="wrap">
+            <!-- Contenedor centrado con ancho máximo -->
+            <a class="logo" href="#top"><img src="img/logo.png" alt="" width="36" height="36">MTECNO</a>
+            <!-- Logo redondo + nombre; vuelve al inicio -->
+            <nav>
+                <!-- Menú de navegación -->
+                <a href="#servicios">Servicios</a>
+                <!-- Salta a la sección con id="servicios" -->
+                <a href="#presupuesto">Presupuesto</a>
+                <!-- Salta al formulario -->
+                <a href="#contacto">Contacto</a>
+                <!-- Salta a los datos de contacto -->
+            </nav>
+            <!-- Fin del menú -->
+        </div>
+        <!-- Fin del contenedor -->
+    </header>
+    <!-- Fin de la barra superior -->
+
+    <main id="top">
+        <!-- Contenido principal; id="top" es el destino del logo -->
+
+        <div class="hero">
+            <!-- Portada: banner + frase + botón -->
+            <h1><img class="banner" src="img/banner.png" alt="MTECNO - Servicio técnico" width="720" height="178"></h1>
+            <!-- El título principal es la imagen del banner (alt = texto para buscadores y lectores) -->
+            <div class="wrap">
+                <!-- Contenedor del texto de portada -->
+                <p>Servicio técnico para celulares, tablets, computadoras, notebooks y equipos electrónicos. Pedí tu presupuesto en un minuto.</p>
+                <!-- Frase de presentación -->
+                <a class="btn" href="#presupuesto">Solicitar presupuesto</a>
+                <!-- Botón que baja al formulario -->
+            </div>
+            <!-- Fin del contenedor -->
+        </div>
+        <!-- Fin de la portada -->
+
+        <section id="servicios">
+            <!-- Sección del catálogo (sin precios) -->
+            <div class="wrap">
+                <!-- Contenedor centrado -->
+                <h2>Qué reparamos</h2>
+                <!-- Título de la sección -->
+                <p class="sub">Elegí tu equipo y contanos qué le pasa. El presupuesto depende de la marca, el modelo y el tipo de reparación.</p>
+                <!-- Explicación breve -->
+                <div class="cat">
+                    <!-- Rejilla: 1 columna en celular, 2 en pantallas grandes -->
+                    <div class="row">
+                        <h3>Celulares</h3>
+                        <p>Pantalla, batería, pin de carga, cámaras, audio, equipos mojados, software y liberación.</p>
+                    </div>
+                    <!-- Un servicio: título (h3) + descripción -->
+                    <div class="row">
+                        <h3>Tablets</h3>
+                        <p>Pantalla táctil, batería, carga, software y actualización de sistema.</p>
+                    </div>
+                    <!-- Servicio: tablets -->
+                    <div class="row">
+                        <h3>Computadoras</h3>
+                        <p>Formateo, discos SSD, memoria RAM, limpieza, fuentes y placas.</p>
+                    </div>
+                    <!-- Servicio: computadoras -->
+                    <div class="row">
+                        <h3>Notebooks</h3>
+                        <p>Pantalla, teclado, bisagras, pin de carga, cambio térmico y mejoras de rendimiento.</p>
+                    </div>
+                    <!-- Servicio: notebooks -->
+                    <div class="row">
+                        <h3>Equipos electrónicos</h3>
+                        <p>Diagnóstico y reparación de fuentes, placas y artefactos electrónicos.</p>
+                    </div>
+                    <!-- Servicio: electrónica -->
+                    <div class="row">
+                        <h3>Software</h3>
+                        <p>Instalación de sistemas, programas, respaldo de datos y eliminación de virus.</p>
+                    </div>
+                    <!-- Servicio: software -->
+                </div>
+                <!-- Fin de la rejilla -->
+            </div>
+            <!-- Fin del contenedor -->
+        </section>
+        <!-- Fin del catálogo -->
+
+        <section id="presupuesto">
+            <!-- Sección del formulario de presupuesto -->
+            <div class="wrap quote">
+                <!-- Contenedor; "quote" lo divide en 2 columnas en pantallas grandes -->
+                <div>
+                    <!-- Columna izquierda: condiciones -->
+                    <h2>Pedí tu presupuesto</h2>
+                    <!-- Título -->
+                    <p class="sub">Completá los datos y se abre WhatsApp con tu consulta lista para enviar.</p>
+                    <!-- Explica qué pasa al enviar -->
+                    <ul class="terms">
+                        <!-- Lista de condiciones -->
+                        <li><strong>Diagnóstico $15.000.</strong> Se descuenta del total si hacés la reparación.</li>
+                        <!-- Condición 1 -->
+                        <li><strong>Seña del repuesto desde el 60 %</strong>, según el modelo del equipo.</li>
+                        <!-- Condición 2 -->
+                        <li><strong>Atención solo con cita</strong> de lunes a viernes.</li>
+                        <!-- Condición 3 -->
+                    </ul>
+                    <!-- Fin de la lista -->
+                </div>
+                <!-- Fin de la columna izquierda -->
+                <form id="f">
+                    <!-- Formulario; el JS lo identifica por id="f" -->
+                    <label>Tipo de equipo <select id="eq" required></select></label>
+                    <!-- Lista desplegable; el JS la llena con los equipos -->
+                    <div class="two">
+                        <!-- Agrupa dos campos lado a lado -->
+                        <label>Marca<input id="marca" required placeholder="Ej: Samsung"></label>
+                        <!-- Campo de texto obligatorio -->
+                        <label>Modelo<input id="modelo" required placeholder="Ej: A54"></label>
+                        <!-- Campo de texto obligatorio -->
+                    </div>
+                    <!-- Fin del grupo -->
+                    <label>Tipo de reparación<select id="rep" required></select></label>
+                    <!-- Desplegable que cambia según el equipo -->
+                    <label>Contanos qué le pasa (opcional)<textarea id="det" rows="3"></textarea></label>
+                    <!-- Texto largo opcional -->
+                    <label>Tu nombre<input id="nom" required autocomplete="name"></label>
+                    <!-- Nombre; autocomplete sugiere el del celular -->
+                    <button class="btn wa" type="submit">Solicitar presupuesto por WhatsApp</button>
+                    <!-- Botón que envía el formulario -->
+                    <p class="hint">El presupuesto final se confirma después de revisar tu consulta.</p>
+                    <!-- Aviso al cliente -->
+                </form>
+                <!-- Fin del formulario -->
+            </div>
+            <!-- Fin del contenedor -->
+        </section>
+        <!-- Fin del presupuesto -->
+
+        <section id="contacto">
+            <!-- Sección de contacto -->
+            <div class="wrap">
+                <!-- Contenedor centrado -->
+                <h2>Contacto</h2>
+                <!-- Título -->
+                <div class="contact">
+                    <!-- Lista de datos -->
+                    <div><strong>WhatsApp:</strong> <a href="#" id="wal">11 3350-8318</a></div>
+                    <!-- El JS completa el enlace real -->
+                    <div><strong>Instagram:</strong> @mtecno</div>
+                    <!-- Cambiar acá cuando actualices el Instagram -->
+                    <div><strong>Horarios:</strong> lunes a viernes solo con cita. Sábado y domingo cerrado.</div>
+                    <!-- Horarios de atención -->
+                </div>
+                <!-- Fin de los datos -->
+            </div>
+            <!-- Fin del contenedor -->
+        </section>
+        <!-- Fin del contacto -->
+
+    </main>
+    <!-- Fin del contenido principal -->
+    <footer>
+        <div class="wrap">© Mtecno. Servicio técnico.</div>
+    </footer>
+    <!-- Pie de página -->
+    <script src="app.js"></script>
+    <!-- Enlaza el archivo de lógica (capa JavaScript); va al final para que la página cargue primero -->
+</body>
+<!-- Fin de lo visible -->
+
+</html>
+<!-- Fin del documento -->
