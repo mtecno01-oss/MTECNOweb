@@ -1,198 +1,559 @@
 <!DOCTYPE html>
-<!-- Avisa al navegador que es un documento HTML5 -->
 <html lang="es">
-<!-- Raíz del documento; lang="es" indica idioma español -->
 
 <head>
-    <!-- Zona de configuración: no se ve en pantalla -->
     <meta charset="utf-8">
-    <!-- Codificación de texto: permite tildes y ñ -->
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <!-- Clave del responsive: usa el ancho real del celular -->
-    <title>Mtecno | Servicio técnico</title>
-    <!-- Título de la pestaña y de Google -->
-    <link rel="icon" href="img/logo.png">
-    <!-- Ícono de la pestaña del navegador -->
+    <title>MTECNO | Servicio Técnico de Celulares, Notebooks y Computadoras</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Servicio técnico especializado en reparación de celulares, tablets, notebooks, computadoras y electrónica en Buenos Aires. Diagnóstico en laboratorio, repuestos con garantía y presupuesto directo por WhatsApp.">
+    <meta name="keywords" content="servicio técnico celulares, reparación notebooks, arreglo computadoras, cambio de pantalla, cambio de batería, reparación tablets, MTECNO, Buenos Aires">
+    <meta name="author" content="MTECNO">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050B18">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MTECNO | Servicio Técnico Especializado">
+    <meta property="og:description" content="Reparación profesional de celulares, notebooks, computadoras y electrónica. Pedí tu presupuesto en un minuto por WhatsApp.">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MTECNO | Servicio Técnico">
+    <meta name="twitter:description" content="Reparación profesional de celulares, notebooks, computadoras y electrónica.">
+    <meta name="twitter:image" content="img/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="apple-touch-icon" href="img/logo.png">
+
+    <!-- Tipografías Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- Acelera la conexión con Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- Carga las tipografías Barlow -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Enlaza el archivo de diseño (capa CSS) -->
+
+    <!-- Datos estructurados Schema.org para Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ElectronicsRepairShop",
+      "name": "MTECNO",
+      "image": "img/logo.png",
+      "description": "Servicio técnico especializado en celulares, notebooks, computadoras, tablets y equipos electrónicos.",
+      "telephone": "+5491133508318",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    }
+    </script>
 </head>
-<!-- Fin de la configuración -->
 
 <body>
-    <!-- Todo lo que se ve en pantalla -->
+    <!-- Enlace de accesibilidad para teclado -->
+    <a href="#presupuesto" class="skip-link">Saltar al contenido principal</a>
 
-    <header>
-        <!-- Barra superior fija -->
-        <div class="wrap">
-            <!-- Contenedor centrado con ancho máximo -->
-            <a class="logo" href="#top"><img src="img/logo.png" alt="" width="36" height="36">MTECNO</a>
-            <!-- Logo redondo + nombre; vuelve al inicio -->
-            <nav>
-                <!-- Menú de navegación -->
-                <a href="#servicios">Servicios</a>
-                <!-- Salta a la sección con id="servicios" -->
-                <a href="#presupuesto">Presupuesto</a>
-                <!-- Salta al formulario -->
-                <a href="#contacto">Contacto</a>
-                <!-- Salta a los datos de contacto -->
+    <!-- Barra superior de navegación -->
+    <header id="header">
+        <div class="wrap header-content">
+            <a class="logo" href="#top" aria-label="MTECNO Inicio">
+                <img src="img/logo.png" alt="Logo de MTECNO" width="40" height="40" class="logo-img">
+                <span class="logo-text">MTECNO</span>
+            </a>
+
+            <!-- Botón menú móvil -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <!-- Menú principal -->
+            <nav id="main-nav" class="nav-menu">
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#ventajas" class="nav-link">Ventajas</a>
+                <a href="#presupuesto" class="nav-link">Presupuesto</a>
+                <a href="#faq" class="nav-link">Preguntas</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+                <a href="https://wa.me/5491133508318" class="btn-nav-wa" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.12.82.83-3.04-.19-.3a8.23 8.23 0 0 1-1.26-4.46c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.42 1.01 2.59c.13.17 1.76 2.68 4.25 3.76.59.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
             </nav>
-            <!-- Fin del menú -->
         </div>
-        <!-- Fin del contenedor -->
     </header>
-    <!-- Fin de la barra superior -->
 
     <main id="top">
-        <!-- Contenido principal; id="top" es el destino del logo -->
-
-        <div class="hero">
-            <!-- Portada: banner + frase + botón -->
-            <h1><img class="banner" src="img/banner.png" alt="MTECNO - Servicio técnico" width="720" height="178"></h1>
-            <!-- El título principal es la imagen del banner (alt = texto para buscadores y lectores) -->
-            <div class="wrap">
-                <!-- Contenedor del texto de portada -->
-                <p>Servicio técnico para celulares, tablets, computadoras, notebooks y equipos electrónicos. Pedí tu presupuesto en un minuto.</p>
-                <!-- Frase de presentación -->
-                <a class="btn" href="#presupuesto">Solicitar presupuesto</a>
-                <!-- Botón que baja al formulario -->
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="wrap hero-wrap">
+                <div class="hero-brand">
+                    <div class="emblem-container">
+                        <img class="hero-emblem" src="img/logo.png" alt="MTECNO Servicio Técnico Especializado" width="160" height="160" fetchpriority="high">
+                        <div class="emblem-glow" aria-hidden="true"></div>
+                    </div>
+                    <div class="badge-pill">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        Laboratorio Técnico Especializado
+                    </div>
+                    <h1>Servicio Técnico para Celulares, Notebooks y Computadoras</h1>
+                    <p class="hero-desc">
+                        Diagnóstico profesional y reparaciones con repuestos de calidad para celulares, tablets, computadoras y electrónica. Solicitá tu presupuesto directo por WhatsApp en menos de un minuto.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#presupuesto">
+                            <span>Solicitar presupuesto</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                        </a>
+                        <a class="btn btn-wa" href="https://wa.me/5491133508318" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.12.82.83-3.04-.19-.3a8.23 8.23 0 0 1-1.26-4.46c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.42 1.01 2.59c.13.17 1.76 2.68 4.25 3.76.59.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+                            </svg>
+                            <span>Escribinos al WhatsApp</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Barra de confianza rápida -->
+                    <div class="trust-bar">
+                        <div class="trust-item">
+                            <span class="trust-icon" aria-hidden="true">🔬</span>
+                            <span>Diagnóstico en laboratorio</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon" aria-hidden="true">🛡️</span>
+                            <span>Trabajos con garantía</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon" aria-hidden="true">⚡</span>
+                            <span>Presupuesto rápido y claro</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Fin del contenedor -->
-        </div>
-        <!-- Fin de la portada -->
+        </section>
 
+        <!-- Sección de Servicios -->
         <section id="servicios">
-            <!-- Sección del catálogo (sin precios) -->
             <div class="wrap">
-                <!-- Contenedor centrado -->
-                <h2>Qué reparamos</h2>
-                <!-- Título de la sección -->
-                <p class="sub">Elegí tu equipo y contanos qué le pasa. El presupuesto depende de la marca, el modelo y el tipo de reparación.</p>
-                <!-- Explicación breve -->
-                <div class="cat">
-                    <!-- Rejilla: 1 columna en celular, 2 en pantallas grandes -->
-                    <div class="row">
-                        <h3>Celulares</h3>
-                        <p>Pantalla, batería, pin de carga, cámaras, audio, equipos mojados, software y liberación.</p>
-                    </div>
-                    <!-- Un servicio: título (h3) + descripción -->
-                    <div class="row">
-                        <h3>Tablets</h3>
-                        <p>Pantalla táctil, batería, carga, software y actualización de sistema.</p>
-                    </div>
-                    <!-- Servicio: tablets -->
-                    <div class="row">
-                        <h3>Computadoras</h3>
-                        <p>Formateo, discos SSD, memoria RAM, limpieza, fuentes y placas.</p>
-                    </div>
-                    <!-- Servicio: computadoras -->
-                    <div class="row">
-                        <h3>Notebooks</h3>
-                        <p>Pantalla, teclado, bisagras, pin de carga, cambio térmico y mejoras de rendimiento.</p>
-                    </div>
-                    <!-- Servicio: notebooks -->
-                    <div class="row">
-                        <h3>Equipos electrónicos</h3>
-                        <p>Diagnóstico y reparación de fuentes, placas y artefactos electrónicos.</p>
-                    </div>
-                    <!-- Servicio: electrónica -->
-                    <div class="row">
-                        <h3>Software</h3>
-                        <p>Instalación de sistemas, programas, respaldo de datos y eliminación de virus.</p>
-                    </div>
-                    <!-- Servicio: software -->
+                <div class="section-head">
+                    <h2>Qué reparamos</h2>
+                    <p class="sub">Elegí tu equipo y contanos la falla. Seleccioná cualquiera para autocompletar tu presupuesto.</p>
                 </div>
-                <!-- Fin de la rejilla -->
-            </div>
-            <!-- Fin del contenedor -->
-        </section>
-        <!-- Fin del catálogo -->
 
+                <div class="services-grid">
+                    <!-- Celulares -->
+                    <article class="service-card" data-equipment="Celular">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3>Celulares</h3>
+                            <p>Cambio de módulo y pantalla, batería, pin de carga, cámaras, parlantes, micrófono, recuperación de equipos mojados y software.</p>
+                        </div>
+                        <button type="button" class="btn-card-select" data-select-eq="Celular">
+                            <span>Cotizar Celular</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
+
+                    <!-- Tablets -->
+                    <article class="service-card" data-equipment="Tablet">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3>Tablets</h3>
+                            <p>Reparación de pantalla táctil, display, reemplazo de batería, problemas de carga, actualización y restauración de sistema operativo.</p>
+                        </div>
+                        <button type="button" class="btn-card-select" data-select-eq="Tablet">
+                            <span>Cotizar Tablet</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
+
+                    <!-- Notebooks -->
+                    <article class="service-card" data-equipment="Notebook">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="2" y1="20" x2="22" y2="20"></line>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3>Notebooks</h3>
+                            <p>Cambio de pantalla, teclado, reparación de bisagras, pin de carga, mantenimiento térmico con pasta de alta gama y upgrade de SSD/RAM.</p>
+                        </div>
+                        <button type="button" class="btn-card-select" data-select-eq="Notebook">
+                            <span>Cotizar Notebook</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
+
+                    <!-- Computadoras -->
+                    <article class="service-card" data-equipment="Computadora">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3>Computadoras</h3>
+                            <p>Armado de PC a medida, diagnóstico de fuentes y placas madre, instalación de discos SSD ultra rápidos, memoria RAM y limpieza integral.</p>
+                        </div>
+                        <button type="button" class="btn-card-select" data-select-eq="Computadora">
+                            <span>Cotizar Computadora</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
+
+                    <!-- Equipos Electrónicos -->
+                    <article class="service-card" data-equipment="Equipo electrónico">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3>Equipos Electrónicos</h3>
+                            <p>Diagnóstico a nivel componente de fuentes conmutadas, placas lógicas, reemplazo de integrados SMD y resolución de fallas de encendido.</p>
+                        </div>
+                        <button type="button" class="btn-card-select" data-select-eq="Equipo electrónico">
+                            <span>Cotizar Electrónica</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
+
+                    <!-- Software y Optimización -->
+                    <article class="service-card" data-equipment="Software">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3>Software y Optimización</h3>
+                            <p>Instalación limpia de Windows y sistemas operativos, desinfección de virus y malware, respaldo seguro de datos y optimización de velocidad.</p>
+                        </div>
+                        <button type="button" class="btn-card-select" data-select-eq="Software">
+                            <span>Cotizar Software</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Ventajas / Por qué elegirnos -->
+        <section id="ventajas" class="section-alt">
+            <div class="wrap">
+                <div class="section-head text-center">
+                    <h2>Por qué confiar en Mtecno</h2>
+                    <p class="sub mx-auto">Trabajamos con honestidad técnica, instrumental especializado y repuestos seleccionados para que tu equipo rinda al 100%.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🔍</div>
+                        <h3>Diagnóstico Transparente</h3>
+                        <p>Te explicamos exactamente qué le pasa a tu equipo antes de hacer cualquier arreglo. Sin costos ocultos ni sorpresas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🛡️</div>
+                        <h3>Garantía Escrita</h3>
+                        <p>Respaldamos nuestras reparaciones y repuestos con garantía para darte total tranquilidad y seguridad en cada trabajo.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">⚙️</div>
+                        <h3>Repuestos de Calidad</h3>
+                        <p>Utilizamos repuestos testeados y componentes originales o de calidad premium para asegurar el rendimiento de fábrica.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">💬</div>
+                        <h3>Atención Directa</h3>
+                        <p>Hablás directamente con el técnico responsable a través de WhatsApp. Coordinamos horarios con cita para que no pierdas tiempo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Presupuesto -->
         <section id="presupuesto">
-            <!-- Sección del formulario de presupuesto -->
             <div class="wrap quote">
-                <!-- Contenedor; "quote" lo divide en 2 columnas en pantallas grandes -->
-                <div>
-                    <!-- Columna izquierda: condiciones -->
+                <!-- Columna izquierda: condiciones y pasos -->
+                <div class="quote-info">
                     <h2>Pedí tu presupuesto</h2>
-                    <!-- Título -->
-                    <p class="sub">Completá los datos y se abre WhatsApp con tu consulta lista para enviar.</p>
-                    <!-- Explica qué pasa al enviar -->
-                    <ul class="terms">
-                        <!-- Lista de condiciones -->
-                        <li><strong>Diagnóstico $15.000.</strong> Se descuenta del total si hacés la reparación.</li>
-                        <!-- Condición 1 -->
-                        <li><strong>Seña del repuesto desde el 60 %</strong>, según el modelo del equipo.</li>
-                        <!-- Condición 2 -->
-                        <li><strong>Atención solo con cita</strong> de lunes a viernes.</li>
-                        <!-- Condición 3 -->
-                    </ul>
-                    <!-- Fin de la lista -->
-                </div>
-                <!-- Fin de la columna izquierda -->
-                <form id="f">
-                    <!-- Formulario; el JS lo identifica por id="f" -->
-                    <label>Tipo de equipo <select id="eq" required></select></label>
-                    <!-- Lista desplegable; el JS la llena con los equipos -->
-                    <div class="two">
-                        <!-- Agrupa dos campos lado a lado -->
-                        <label>Marca<input id="marca" required placeholder="Ej: Samsung"></label>
-                        <!-- Campo de texto obligatorio -->
-                        <label>Modelo<input id="modelo" required placeholder="Ej: A54"></label>
-                        <!-- Campo de texto obligatorio -->
+                    <p class="sub">Completá los datos de tu equipo y se generará una consulta detallada en tu WhatsApp lista para enviar.</p>
+
+                    <div class="steps-box">
+                        <h3>¿Cómo trabajamos?</h3>
+                        <ol class="steps-list">
+                            <li><strong>1. Enviás tu consulta:</strong> Detallás la marca, modelo y falla del equipo en el formulario.</li>
+                            <li><strong>2. Presupuesto estimado:</strong> Te respondemos por WhatsApp con la cotización de repuestos y mano de obra.</li>
+                            <li><strong>3. Coordinación de cita:</strong> Agendamos el ingreso del equipo a nuestro laboratorio para su revisión y reparación.</li>
+                        </ol>
                     </div>
-                    <!-- Fin del grupo -->
-                    <label>Tipo de reparación<select id="rep" required></select></label>
-                    <!-- Desplegable que cambia según el equipo -->
-                    <label>Contanos qué le pasa (opcional)<textarea id="det" rows="3"></textarea></label>
-                    <!-- Texto largo opcional -->
-                    <label>Tu nombre<input id="nom" required autocomplete="name"></label>
-                    <!-- Nombre; autocomplete sugiere el del celular -->
-                    <button class="btn wa" type="submit">Solicitar presupuesto por WhatsApp</button>
-                    <!-- Botón que envía el formulario -->
-                    <p class="hint">El presupuesto final se confirma después de revisar tu consulta.</p>
-                    <!-- Aviso al cliente -->
-                </form>
-                <!-- Fin del formulario -->
-            </div>
-            <!-- Fin del contenedor -->
-        </section>
-        <!-- Fin del presupuesto -->
 
-        <section id="contacto">
-            <!-- Sección de contacto -->
-            <div class="wrap">
-                <!-- Contenedor centrado -->
-                <h2>Contacto</h2>
-                <!-- Título -->
-                <div class="contact">
-                    <!-- Lista de datos -->
-                    <div><strong>WhatsApp:</strong> <a href="#" id="wal">11 3350-8318</a></div>
-                    <!-- El JS completa el enlace real -->
-                    <div><strong>Instagram:</strong> @mtecno</div>
-                    <!-- Cambiar acá cuando actualices el Instagram -->
-                    <div><strong>Horarios:</strong> lunes a viernes solo con cita. Sábado y domingo cerrado.</div>
-                    <!-- Horarios de atención -->
+                    <ul class="terms">
+                        <li>
+                            <strong>Diagnóstico en laboratorio: $15.000</strong>
+                            <span>Se descuenta íntegramente del total si aceptás la reparación del equipo.</span>
+                        </li>
+                        <li>
+                            <strong>Seña del repuesto: desde el 60 %</strong>
+                            <span>Aplica para encargo de módulos, pantallas o componentes específicos según el modelo.</span>
+                        </li>
+                        <li>
+                            <strong>Atención exclusiva con cita previa</strong>
+                            <span>De lunes a viernes para brindarte un servicio dedicado sin esperas.</span>
+                        </li>
+                    </ul>
                 </div>
-                <!-- Fin de los datos -->
-            </div>
-            <!-- Fin del contenedor -->
-        </section>
-        <!-- Fin del contacto -->
 
+                <!-- Columna derecha: formulario interactivo -->
+                <div class="quote-form-container">
+                    <form id="f" class="quote-form" novalidate>
+                        <div class="form-header">
+                            <span class="form-title">Formulario de cotización</span>
+                            <span class="form-badge">Respuesta rápida</span>
+                        </div>
+
+                        <!-- Selector de equipo -->
+                        <div class="field-group">
+                            <label for="eq">Tipo de equipo <span class="req">*</span></label>
+                            <div class="select-wrapper">
+                                <select id="eq" name="equipo" required aria-required="true"></select>
+                            </div>
+                        </div>
+
+                        <!-- Marca y modelo en dos columnas -->
+                        <div class="two">
+                            <div class="field-group">
+                                <label for="marca">Marca <span class="req">*</span></label>
+                                <input type="text" id="marca" name="marca" required aria-required="true" placeholder="Ej: Samsung, Apple, Lenovo">
+                                <span class="field-error" id="err-marca">Ingresá la marca de tu equipo</span>
+                            </div>
+                            <div class="field-group">
+                                <label for="modelo">Modelo <span class="req">*</span></label>
+                                <input type="text" id="modelo" name="modelo" required aria-required="true" placeholder="Ej: A54, iPhone 13, Ideapad 3">
+                                <span class="field-error" id="err-modelo">Ingresá el modelo de tu equipo</span>
+                            </div>
+                        </div>
+
+                        <!-- Reparación requerida -->
+                        <div class="field-group">
+                            <label for="rep">Tipo de reparación requerida <span class="req">*</span></label>
+                            <div class="select-wrapper">
+                                <select id="rep" name="reparacion" required aria-required="true"></select>
+                            </div>
+                        </div>
+
+                        <!-- Detalle adicional -->
+                        <div class="field-group">
+                            <label for="det">Contanos qué le pasa al equipo <span class="opt">(opcional)</span></label>
+                            <textarea id="det" name="detalle" rows="3" placeholder="Ej: No da imagen tras una caída, se apaga solo al rato de usarlo, batería hinchada..."></textarea>
+                        </div>
+
+                        <!-- Nombre del cliente -->
+                        <div class="field-group">
+                            <label for="nom">Tu nombre <span class="req">*</span></label>
+                            <input type="text" id="nom" name="nombre" required aria-required="true" autocomplete="name" placeholder="Ej: Juan Pérez">
+                            <span class="field-error" id="err-nom">Ingresá tu nombre para que podamos atenderte</span>
+                        </div>
+
+                        <!-- Estado / Mensaje de feedback -->
+                        <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+
+                        <!-- Botón de envío -->
+                        <button class="btn btn-wa-submit" id="btn-submit" type="submit">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.12.82.83-3.04-.19-.3a8.23 8.23 0 0 1-1.26-4.46c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.42 1.01 2.59c.13.17 1.76 2.68 4.25 3.76.59.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+                            </svg>
+                            <span id="btn-text">Solicitar presupuesto por WhatsApp</span>
+                        </button>
+                        <p class="hint">🔒 Tus datos son privados y se envían de forma directa a nuestro chat de WhatsApp.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preguntas Frecuentes (FAQ) -->
+        <section id="faq" class="section-alt">
+            <div class="wrap">
+                <div class="section-head text-center">
+                    <h2>Preguntas frecuentes</h2>
+                    <p class="sub mx-auto">Resolvemos las dudas más habituales sobre presupuestos, plazos y modalidades de trabajo.</p>
+                </div>
+
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>¿Cómo funciona el costo de diagnóstico de $15.000?</span>
+                            <span class="faq-arrow" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>El valor del diagnóstico cubre la revisión exhaustiva del equipo en laboratorio, desarme y pruebas con instrumental. <strong>Si aceptás el presupuesto y realizás la reparación, los $15.000 se descuentan al 100% del costo total.</strong> Solo se abona si decidís no reparar el equipo tras el diagnóstico.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>¿Cuánto tiempo demora una reparación habitual?</span>
+                            <span class="faq-arrow" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Reparaciones frecuentes como cambios de pantalla de celular, batería o instalación de discos SSD y mantenimiento térmico suelen resolverse en el día o dentro de 24 a 48 hs hábiles (sujeto a disponibilidad de repuesto). Fallas de placa o electrónica compleja requieren diagnóstico detallado que se coordina con el cliente.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>¿Tienen garantía los trabajos y repuestos?</span>
+                            <span class="faq-arrow" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Sí, brindamos garantía escrita sobre la mano de obra y los repuestos instalados ante defectos de fabricación (no cubre golpes, rajaduras, ingreso de líquidos posteriores o manipulaciones de terceros).</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>¿Por qué la atención es solo con cita previa?</span>
+                            <span class="faq-arrow" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Trabajamos exclusivamente con cita para dedicar tiempo individual y personalizado a cada cliente en el ingreso y retiro de equipos, evitando demoras o filas innecesarias.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>¿Qué medios de pago aceptan?</span>
+                            <span class="faq-arrow" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Aceptamos transferencias bancarias (alias/CBU), Mercado Pago y efectivo al momento de retirar el equipo reparado.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Contacto directo</h2>
+                    <p class="sub">Comunicate con nosotros para consultas, seguimiento de tu equipo o solicitud de turnos.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <a href="https://wa.me/5491133508318" id="wal" class="contact-card" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon wa" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.12.82.83-3.04-.19-.3a8.23 8.23 0 0 1-1.26-4.46c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.42 1.01 2.59c.13.17 1.76 2.68 4.25 3.76.59.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h3>WhatsApp</h3>
+                            <span class="contact-value">11 3350-8318</span>
+                            <span class="contact-sub">Escribinos para presupuestos o turnos</span>
+                        </div>
+                    </a>
+
+                    <a href="https://instagram.com/mtecno" class="contact-card" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon ig" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Instagram</h3>
+                            <span class="contact-value">@mtecno</span>
+                            <span class="contact-sub">Trabajos, fotos y novedades</span>
+                        </div>
+                    </a>
+
+                    <div class="contact-card static">
+                        <div class="contact-icon clock" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Horarios de atención</h3>
+                            <span class="contact-value">Lunes a Viernes con cita</span>
+                            <span class="contact-sub">Sábados, domingos y feriados cerrado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <!-- Fin del contenido principal -->
-    <footer>
-        <div class="wrap">© Mtecno. Servicio técnico.</div>
-    </footer>
+
     <!-- Pie de página -->
+    <footer id="footer">
+        <div class="wrap footer-content">
+            <div class="footer-brand">
+                <a class="logo" href="#top">
+                    <img src="img/logo.png" alt="MTECNO" width="32" height="32" class="logo-img">
+                    <span class="logo-text">MTECNO</span>
+                </a>
+                <p class="footer-tagline">Laboratorio técnico de reparación para celulares, computadoras, notebooks y equipos electrónicos en Buenos Aires.</p>
+            </div>
+            <div class="footer-nav">
+                <a href="#servicios">Servicios</a>
+                <a href="#ventajas">Ventajas</a>
+                <a href="#presupuesto">Presupuesto</a>
+                <a href="#faq">Preguntas</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="current-year">2026</span> MTECNO. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5491133508318?text=Hola%20Mtecno%2C%20quisiera%20hacer%20una%20consulta" class="floating-wa" id="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.12.82.83-3.04-.19-.3a8.23 8.23 0 0 1-1.26-4.46c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.42 1.01 2.59c.13.17 1.76 2.68 4.25 3.76.59.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+        </svg>
+        <span class="floating-tooltip">¿Tenés dudas? ¡Escribinos!</span>
+    </a>
+
+    <!-- Lógica de la aplicación -->
     <script src="app.js"></script>
-    <!-- Enlaza el archivo de lógica (capa JavaScript); va al final para que la página cargue primero -->
 </body>
-<!-- Fin de lo visible -->
 
 </html>
-<!-- Fin del documento -->

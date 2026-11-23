@@ -3,6 +3,19 @@
   "name": "mejoralo, analiza posibles errores y fallas",
   "createdAt": "2026-11-23T14:41:27.429Z",
   "filename": "9ae843d2-8f2d-4ba2-b03e-068849722c50.json",
-  "geminiStarted": false,
-  "messages": []
+  "geminiStarted": true,
+  "messages": [
+    {
+      "id": "4206e71a-ec63-4638-a29c-61d9da2ac644",
+      "role": "user",
+      "content": "mejoralo, analiza posibles errores y fallas y corregilos",
+      "status": "pending",
+      "model": "gemini-3.8-flash-high",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-11-23T14:41:29.578Z",
+      "sender": "ios",
+      "is_cancelled": false
+    }
+  ]
 }
